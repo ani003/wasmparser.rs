@@ -801,6 +801,11 @@ impl OperatorValidator {
                 self.check_operands_1(ty.content_type)?;
                 self.func_state.change_frame(1)?;
             }
+            Operator::Setjmp {ref memarg } => {
+                self.check_memarg(memarg, 3, resources)?;
+                self.check_operands_1(Type::I64)?;
+                self.func_state.change_frame_with_type(1, Type::I64)?;
+            }
             Operator::I32Load { ref memarg } => {
                 self.check_memarg(memarg, 2, resources)?;
                 self.check_operands_1(Type::I32)?;

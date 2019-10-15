@@ -255,6 +255,7 @@ pub enum Operator<'a> {
     TeeLocal { local_index: u32 },
     GetGlobal { global_index: u32 },
     SetGlobal { global_index: u32 },
+    Setjmp { memarg: MemoryImmediate },
     I32Load { memarg: MemoryImmediate },
     I64Load { memarg: MemoryImmediate },
     F32Load { memarg: MemoryImmediate },
