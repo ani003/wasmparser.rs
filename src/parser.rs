@@ -528,6 +528,7 @@ impl<'a> Parser<'a> {
         }
         let reader = self.operators_reader.as_mut().expect("operator reader");
         let op = reader.read()?;
+        println!("(wasmparser) op = {:?}", op);
         self.state = ParserState::CodeOperator(op);
         Ok(())
     }

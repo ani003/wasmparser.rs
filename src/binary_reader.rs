@@ -1135,6 +1135,8 @@ impl<'a> BinaryReader<'a> {
             0xd0 => Operator::RefNull,
             0xd1 => Operator::RefIsNull,
 
+            0xd3 => Operator::Setjmp {memarg: MemoryImmediate {flags: 0, offset: 0} },
+
             0xfc => self.read_0xfc_operator()?,
             0xfd => self.read_0xfd_operator()?,
             0xfe => self.read_0xfe_operator()?,
