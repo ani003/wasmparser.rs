@@ -257,6 +257,8 @@ pub enum Operator<'a> {
     SetGlobal { global_index: u32 },
     Setjmp { memarg: MemoryImmediate },
     Longjmp { memarg: MemoryImmediate },
+    Control { function_index: u32 },
+    Restore,
     I32Load { memarg: MemoryImmediate },
     I64Load { memarg: MemoryImmediate },
     F32Load { memarg: MemoryImmediate },

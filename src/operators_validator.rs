@@ -811,6 +811,18 @@ impl OperatorValidator {
                 self.check_operands_1(Type::I32)?;
                 self.func_state.change_frame_with_type(1, Type::I64)?;
             }
+            Operator::Control { function_index } => {
+                // self.check_memarg(memarg, 3, resources)?;
+                unimplemented!("wasmparser.rs: TODO: Operator::Control")
+                // self.check_operands_1(Type::I32)?;
+                // self.func_state.change_frame_with_type(1, Type::I64)?;
+            }
+            Operator::Restore => {
+                // self.check_memarg(memarg, 3, resources)?;
+                unimplemented!("wasmparser.rs: TODO: Operator::Restore")
+                // self.check_operands_1(Type::I32)?;
+                // self.func_state.change_frame_with_type(1, Type::I64)?;
+            }
             Operator::I32Load { ref memarg } => {
                 self.check_memarg(memarg, 2, resources)?;
                 self.check_operands_1(Type::I32)?;
