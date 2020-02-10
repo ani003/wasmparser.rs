@@ -1139,7 +1139,6 @@ impl<'a> BinaryReader<'a> {
             0xd4 => Operator::Longjmp {memarg: MemoryImmediate {flags: 0, offset: 0} },
             0xd5 => {
                 let f = self.read_var_u32()?;
-                println!("HELLO!!! {}", f);
                 Operator::Control {
                     function_index: f,
                 }
