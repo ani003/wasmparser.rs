@@ -1135,8 +1135,6 @@ impl<'a> BinaryReader<'a> {
             0xd0 => Operator::RefNull,
             0xd1 => Operator::RefIsNull,
 
-            0xd3 => Operator::Setjmp {memarg: MemoryImmediate {flags: 0, offset: 0} },
-            0xd4 => Operator::Longjmp {memarg: MemoryImmediate {flags: 0, offset: 0} },
             0xd5 => {
                 let f = self.read_var_u32()?;
                 Operator::Control {
