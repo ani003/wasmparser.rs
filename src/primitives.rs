@@ -257,6 +257,7 @@ pub enum Operator<'a> {
     SetGlobal { global_index: u32 },
     Control { function_index: u32 },
     Restore,
+    ContinuationCopy,
     I32Load { memarg: MemoryImmediate },
     I64Load { memarg: MemoryImmediate },
     F32Load { memarg: MemoryImmediate },

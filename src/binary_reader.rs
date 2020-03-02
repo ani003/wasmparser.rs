@@ -1142,6 +1142,7 @@ impl<'a> BinaryReader<'a> {
                 }
             },
             0xd6 => Operator::Restore,
+            0xd7 => Operator::ContinuationCopy,
 
             0xfc => self.read_0xfc_operator()?,
             0xfd => self.read_0xfd_operator()?,
