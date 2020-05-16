@@ -815,6 +815,7 @@ impl OperatorValidator {
             }
             Operator::ContinuationCopy => unimplemented!("wasmparser.rs: TODO: Operator::ContinuationCopy"),
             Operator::Prompt => unimplemented!("wasmparser.rs: TODO: Operator::Prompt"),
+            Operator::ContinuationDelete => unimplemented!("wasmparser.rs: TODO: Operator::ContinuationDelete"),
             Operator::I32Load { ref memarg } => {
                 self.check_memarg(memarg, 2, resources)?;
                 self.check_operands_1(Type::I32)?;

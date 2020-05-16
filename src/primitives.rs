@@ -259,6 +259,7 @@ pub enum Operator<'a> {
     Restore,
     ContinuationCopy,
     Prompt,
+    ContinuationDelete,
     I32Load { memarg: MemoryImmediate },
     I64Load { memarg: MemoryImmediate },
     F32Load { memarg: MemoryImmediate },
