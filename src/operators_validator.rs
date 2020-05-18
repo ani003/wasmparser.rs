@@ -252,6 +252,7 @@ enum BlockType {
     Block,
     Loop,
     If,
+    Prompt,
 }
 
 pub trait WasmModuleResources {
@@ -814,7 +815,13 @@ impl OperatorValidator {
                 // self.func_state.change_frame_with_type(1, Type::I64)?;
             }
             Operator::ContinuationCopy => unimplemented!("wasmparser.rs: TODO: Operator::ContinuationCopy"),
-            Operator::Prompt => unimplemented!("wasmparser.rs: TODO: Operator::Prompt"),
+            // Operator::Prompt => unimplemented!("wasmparser.rs: TODO: Operator::Prompt"),
+            Operator::Prompt { ty } => {
+                self.check_block_type(ty, resources)?;
+                self.check_block_params(ty, resources, 0)?;
+                self.func_state
+                    .push_block(ty, BlockType::Prompt, resources)?;
+            }
             Operator::ContinuationDelete => unimplemented!("wasmparser.rs: TODO: Operator::ContinuationDelete"),
             Operator::I32Load { ref memarg } => {
                 self.check_memarg(memarg, 2, resources)?;

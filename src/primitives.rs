@@ -258,7 +258,7 @@ pub enum Operator<'a> {
     Control { function_index: u32 },
     Restore,
     ContinuationCopy,
-    Prompt,
+    Prompt { ty: TypeOrFuncType },
     ContinuationDelete,
     I32Load { memarg: MemoryImmediate },
     I64Load { memarg: MemoryImmediate },

@@ -1143,7 +1143,9 @@ impl<'a> BinaryReader<'a> {
             },
             0xd6 => Operator::Restore,
             0xd7 => Operator::ContinuationCopy,
-            0xd8 => Operator::Prompt,
+            0xd8 => Operator::Prompt {
+                ty: self.read_blocktype()?,
+            },
             0xd9 => Operator::ContinuationDelete,
 
             0xfc => self.read_0xfc_operator()?,
